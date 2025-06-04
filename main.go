@@ -1,7 +1,13 @@
 package main
 
-import "github.com/petar-arandjic/gik/cmd"
+import (
+	"flag"
+	"fmt"
+)
 
 func main() {
-	cmd.Execute()
+	name := flag.String("name", "world", "the name to greet")
+	flag.Parse()
+
+	fmt.Printf("Hello, %s!\n", *name)
 }
